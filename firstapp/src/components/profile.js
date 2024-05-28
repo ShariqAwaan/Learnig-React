@@ -1,6 +1,6 @@
 // import React from 'react'
-
-function Profile() {
+import Checkingprops from "./checkingprops"
+function Profile(props) {
   return (
     <div style={{border: "2px solid green" , backgroundColor: 'lightblue'}}>
       <h3 style={{color: 'green'}}>Hi, I am Shariq Abdullah</h3>
@@ -9,7 +9,7 @@ function Profile() {
         <li>I have done my FSC. Pre Engineering from Chakwal.</li>
         <li>I am now Learning FrontEnd Development from Upwards</li>
       </ul>
-     
+     <Checkingprops {...props}/>
     </div>
   )
 }
