@@ -1,6 +1,6 @@
 import './App.css';
 // import Myfirstcomponent from './components/myfirstcomponent';
-import Profile from './profile';
+import Profile from './components/profile';
 
 function App() {
   return (
