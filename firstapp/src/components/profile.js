@@ -18,7 +18,7 @@
 
 // export default Profile;
 
-import GetImageUrl from "./ExtractingComponent";
+import GetImageUrl from "./Passingprops/ExtractingComponent";
 
 function Profile({maria , katsuko}) {
   console.log(maria);
