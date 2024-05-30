@@ -1,20 +1,31 @@
 import './App.css';
 // import Conditionals from './components/Conditionals';
 // import Myfirstcomponent from './components/myfirstcomponent';
-// import ExtractingComponent from './components/ExtractingComponent';
 
-// import GetImageUrl from './components/ExtractingComponent';
 // import Profile from './components/Profile';
-import AdjustingSize from './components/Passingprops/Adjust.the.image.size.based.on.a.prop';
+// import Profile from './components/3.Passingprops/Profile';
+// import AdjustingSize from './components/3.Passingprops/Adjust.the.image.size.based.on.a.prop';
+import PassingChild from './components/3.Passingprops/Card.component.and.passing.child';
+// import Card from './components/3.Passingprops/Card.component';
 
 export default function App(){
   return (
     
   <>
-  <AdjustingSize />
+  <PassingChild />
   </>
   );
 }
+
+
+// export default function App(){
+//   return (
+    
+//   <>
+//   <AdjustingSize />
+//   </>
+//   );
+// }
 
 
 // export default function App() {
