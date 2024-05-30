@@ -1,28 +1,28 @@
 import './App.css';
-// import Conditionals from './components/Conditionals';
-// import Myfirstcomponent from './components/myfirstcomponent';
+import Conditionals from './components/Conditionals';
+import Myfirstcomponent from './components/myfirstcomponent';
 
-// import Profile from './components/Profile';
+import Profile from './components/Profile';
 // import Profile from './components/3.Passingprops/Profile';
-// import AdjustingSize from './components/3.Passingprops/Adjust.the.image.size.based.on.a.prop';
-import PassingChild from './components/3.Passingprops/Card.component.and.passing.child';
+// import AdjustingTheSize from './components/3.Passingprops/Adjust.the.image.size.based.on.a.prop';
+// import PassingChild from './components/3.Passingprops/Card.component.and.passing.child';
 // import Card from './components/3.Passingprops/Card.component';
 
-export default function App(){
-  return (
+// export default function App(){
+//   return (
     
-  <>
-  <PassingChild />
-  </>
-  );
-}
+//   <>
+//   <PassingChild />
+//   </>
+//   );
+// }
 
 
 // export default function App(){
 //   return (
     
 //   <>
-//   <AdjustingSize />
+//   <AdjustingTheSize />
 //   </>
 //   );
 // }
@@ -50,16 +50,15 @@ export default function App(){
 // }
 
 
-// function App() {
-//   return (
-//     <div>
-//       {/* <Profile name = "D" clas = "Web D"/> */}
-//       {/* <Conditionals /> */}
-//       {/* <Myfirstcomponent /> */}
-//       <ExtractingComponent />
+function App() {
+  return (
+    <>
+      <Profile name = "D" clas = "Web D"/>
+      <Conditionals />
+      <Myfirstcomponent />
 
-//     </div>
-//   );
-// }
+    </>
+  );
+}
 
-// export default App;
+export default App;
