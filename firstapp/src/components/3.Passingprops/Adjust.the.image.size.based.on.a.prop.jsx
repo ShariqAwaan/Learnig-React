@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import AdjustingSize from '../../utils/adjustingSize';
 
 function Avatar({ person, size }) {
