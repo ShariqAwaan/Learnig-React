@@ -17,4 +17,4 @@ function CRMethodtwo() {
   )
 }
 
-export default CRMethodtwo
+export default CRMethodtwo;
