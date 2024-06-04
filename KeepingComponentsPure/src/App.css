@@ -1,0 +1,14 @@
+*{
+  box-sizing: border-box;
+  margin: 15px;
+  padding: 15px;
+}
+
+.day{
+  background-color: black;
+  color: white;
+}
+.night{
+  background-color: white;
+  color: black;
+}
