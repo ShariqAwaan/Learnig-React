@@ -1,10 +1,20 @@
 import './App.css';
-import JSAssignments from './components/JSAssignments';
+import SqOfNum from './components/1.SqofNum';
+import AddingPY from './components/2.AddingPY';
 
 function App() {
   return (
     <>
-    <JSAssignments />
+     <div id="mainContainer">
+     <h3 style={{color: 'green'}}>JS Assignments Recall</h3>
+
+
+    <SqOfNum />
+
+    <AddingPY />
+
+
+    </div>
     </>
   );
 }
