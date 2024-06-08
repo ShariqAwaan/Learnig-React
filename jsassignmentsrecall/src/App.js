@@ -1,6 +1,10 @@
 import './App.css';
 import SqOfNum from './components/1.SqofNum';
 import AddingPY from './components/2.AddingPY';
+import RemovingChar from './components/3.RemovingChar';
+import ChangingPositions from './components/4.ChangingPositions';
+import ChangingPosition from './components/5.ChangingPositions';
+
 
 function App() {
   return (
@@ -12,6 +16,12 @@ function App() {
     <SqOfNum />
 
     <AddingPY />
+
+    <RemovingChar />
+
+    <ChangingPositions />
+
+    <ChangingPosition />
 
 
     </div>
