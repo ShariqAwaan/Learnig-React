@@ -10,7 +10,17 @@ function CheckingMultiples() {
             setValue(e.target.value)
       }
       function handleClick(){
-            
+           if (value <= 0){
+              setResult('Please enter some value first')
+            }  else if (value % 3 === 0 && value % 7 === 0){
+              setResult('The given no. is multiple of both 3 and 7')
+            } else if (value % 3 === 0 ){
+              setResult('The given no. is multiple of 3')
+            } else if (value % 7 === 0 ){
+              setResult('The given no. is multiple of 7')
+            } else{
+              setResult('The given no. is niether multiple of 3 nor 7')
+            }
             
             setValue('');
       }
