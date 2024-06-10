@@ -1,4 +1,6 @@
 import './App.css';
+import Objects from './components/4.Objects';
+import Immer from './components/5.UsingImmer';
 // import Default from './components/3.Passingprops/Default.jsx';
 // import Default from './components/3.Passingprops/Default';
 // import Conditionals from './components/Conditionals';
@@ -7,7 +9,7 @@ import './App.css';
 // import Profile from './components/Profile';
 // import Profile from "./components/3.Passingprops/Profile.jsx";
 // import AdjustingTheSize from './components/3.Passingprops/Adjust.the.image.size.based.on.a.prop';
-import PassingChild from './components/3.Passingprops/Card.component.and.passing.child';
+// import PassingChild from './components/3.Passingprops/Card.component.and.passing.child';
 // import Card from './components/3.Passingprops/Card.component';
 
 // export default function App(){
@@ -45,11 +47,23 @@ import PassingChild from './components/3.Passingprops/Card.component.and.passing
 // }
 
 
+// export default function App(){
+//   return (
+    
+//   <>
+//   <PassingChild />
+//   </>
+//   );
+// }
 export default function App(){
   return (
     
   <>
-  <PassingChild />
+  <h5>Simple Methods</h5>
+  <Objects /> 
+
+  <h5>Using Immer</h5>
+  <Immer />
   </>
   );
 }

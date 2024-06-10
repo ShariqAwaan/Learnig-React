@@ -11,6 +11,9 @@ import EvaluatingTotalMarks from './components/8.EvaluatingTotalMarks';
 import SumOfAllNumbers from './components/10.SumOfAllNumbers';
 import CheckingIfPositiveOrNegative from './components/11.CheckingIfPositiveOrNegative';
 import TicketPrice from './components/12.TicketPrice';
+import SumOfTwoArrays from './components/13.SumOfTwoArrays';
+import FindingFactorial from './components/14.FindingFactorial';
+import MatchingSearch from './components/15.MatchingSearch';
 
 
 function App() {
@@ -43,6 +46,12 @@ function App() {
     <CheckingIfPositiveOrNegative />
 
     <TicketPrice />
+
+    <SumOfTwoArrays />
+
+    <FindingFactorial />
+
+    <MatchingSearch />
 
     </div>
     </>
