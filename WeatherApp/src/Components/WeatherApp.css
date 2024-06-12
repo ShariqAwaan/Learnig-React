@@ -1,0 +1,35 @@
+.mainDiv{
+  height: 400px;
+  min-width: 400px;
+  background-color: rgb(130, 213, 185);
+  color: black;
+  display: flex;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputField{
+  height: 20px;
+  width: 70%;
+  background-color: rgb(239, 239, 239);
+  border: 1px solid orangered;
+  border-radius: 15px;
+  color: black;
+}
+.resetButton{
+  height: 30px;
+  width: 20%;
+  background-color: rgb(94, 93, 93);
+  color: rgb(233, 230, 230);
+  border: 1px solid orangered;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+h3 , h2 , h5{
+  height: 10px;
+  width: 100%;
+  text-align: center;
+}
