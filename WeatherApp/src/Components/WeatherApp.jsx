@@ -25,7 +25,7 @@ function WeatherApp() {
         .then(data => {
           console.log('API Response:', data);
 
-          setCountry(data.sys.country)
+          setCountry(data.sys.country);
           setCity(data.name);
           setTemperature(data.main.temp);
           setFeelsLike(data.main.feels_like);
