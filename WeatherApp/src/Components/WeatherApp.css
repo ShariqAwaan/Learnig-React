@@ -28,8 +28,11 @@
   padding: 5px;
 }
 
-h3 , h2 , h5{
+h3 , h2 {
   height: 10px;
   width: 100%;
   text-align: center;
+}
+h5{
+  width: 1023px;
 }

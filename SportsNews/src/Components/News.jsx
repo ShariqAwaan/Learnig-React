@@ -8,7 +8,8 @@ function News() {
     ()=>{
       fetch(`https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=f1a743c2c22742599126378694ef5da0`)
       .then(response => response.json())
-      .then(data => {console.log('Api Response :' ,data);
+      .then(data => {
+        // console.log('Api Response :' ,data);
              setNews(data.articles);
     })
       .catch(error => {
@@ -30,9 +31,9 @@ function News() {
         <>
           <div className='newsDiv'>
             <img src={item.urlToImage} alt="image" />
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <a href={item.url} target='_blank'>Read More</a>
+            <h3 className='newsTitle'>{item.title}</h3>
+            <p className='newsDetail'>{item.description}</p>
+            <a className='newsURL' href={item.url} target='_blank'>Read More</a>
           </div>
         </>
         )

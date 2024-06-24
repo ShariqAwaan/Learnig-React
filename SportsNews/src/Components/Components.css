@@ -32,7 +32,7 @@
 }
 
 .newsDiv{
-  min-height: 300px;
+  height: 450px;
   width: 350px;
   background-color: white;
   color: #080808;
@@ -42,4 +42,20 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: start;
 };
+
+.newsTitle{
+  height: 0px;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+
+.newsDetail{
+  height: 100px;
+}
+
+.newsURL{
+  /* justify-self:end; */
+  align-items: end;
+}
