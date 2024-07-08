@@ -7,11 +7,11 @@ import axios from "axios";
 function UpdateStudent({studentId}) {
   let id = studentId;
   const [student, setStudent] = useState({
-    studentName: "",
-    fatherName: "",
-    grade: "",
-    email: "",
-    contactNo: 0,
+    StudentName: "",
+    FatherName: "",
+    Grade: "",
+    Email: "",
+    ContactNo: 0,
   });
 
   useEffect(() => {
@@ -20,11 +20,11 @@ function UpdateStudent({studentId}) {
         await axios.get(`https://localhost:7143/api/find-and-update-student?Id=${id}`)
       .then((response)=>{
         setStudent({
-          studentName : response.data.studentName,
-          fatherName : response.data.fatherName,
-          grade : response.data.grade,
-          email : response.data.studentEmail,
-          contactNo : response.data.contactNo,
+          StudentName : response.data.studentName,
+          FatherName : response.data.fatherName,
+          Grade : response.data.grade,
+          Email : response.data.studentEmail,
+          ContactNo : response.data.contactNo,
           
       })
       })
@@ -33,12 +33,27 @@ function UpdateStudent({studentId}) {
       }
     }
     getStudent();
-  } , [])
+  } , [studentId])
 
   
-
+  const submitData = async (e) => {
+    e.preventDefault();
+    console.log(student); 
+    
+    try {
+      await axios
+        .post(`https://localhost:7143/api/find-and-update-student?Id=${id}`, student)
+        .then((response) => {
+        
+          console.log(response);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleInputs = (e) => {
+    console.log(e.target.name, e.target.value); 
     setStudent({
       ...student,
       [e.target.name]: e.target.value,
@@ -46,26 +61,27 @@ function UpdateStudent({studentId}) {
   };
   return (
     <>
-      <Form >
+      {studentId && (
+        <Form onSubmit={submitData}>
 
         <Form.Group className="mb-3" controlId="formStudentName">
           <Form.Label>Student Name</Form.Label>
           <Form.Control
             type="text"
             name="StudentName"
-            value={student.studentName}
+            value={student.StudentName}
             onChange={handleInputs}
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formFatherName">
           <Form.Label>Father Name</Form.Label>
-          <Form.Control type="text" name="FatherName" value={student.fatherName} onChange={handleInputs} />
+          <Form.Control type="text" name="FatherName" value={student.FatherName} onChange={handleInputs} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formGrade">
           <Form.Label>Grade</Form.Label>
-          <Form.Control type="text" name="Grade" value={student.grade} onChange={handleInputs} />
+          <Form.Control type="text" name="Grade" value={student.Grade} onChange={handleInputs} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formStudentEmail">
@@ -73,7 +89,7 @@ function UpdateStudent({studentId}) {
             Email <br />
             (Optional)
           </Form.Label>
-          <Form.Control type="text" name="Email" value={student.email} onChange={handleInputs} />
+          <Form.Control type="text" name="Email" value={student.Email} onChange={handleInputs} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formContactNo">
@@ -81,7 +97,7 @@ function UpdateStudent({studentId}) {
           <Form.Control
             type="number"
             name="ContactNo"
-            value={student.contactNo}
+            value={student.ContactNo}
             onChange={handleInputs}
           />
         </Form.Group>
@@ -90,6 +106,7 @@ function UpdateStudent({studentId}) {
           Submit
         </Button>
       </Form>
+      )}
     </>
   )
 }

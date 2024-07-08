@@ -1,10 +1,15 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import UpdateStudent from "./UpdateStudent";
+import DeleteStudent from "./DeleteStudent";
+import AddStudent from "./AddStudent";
 
 function AllStudents() {
   const [students, setStudents] = useState([]);
-  const [id , setId] = useState(null);
+    const [count, setCount] = useState(0);
+    const [updateCount, setUpdateCount] = useState(1);
+    const [id, setId] = useState(null);
+    const [delId, setDelId] = useState(null);
 
   useEffect(() => {
     async function getAllStudents() {
@@ -21,12 +26,18 @@ function AllStudents() {
       }
     }
     getAllStudents();
-  }, []);
+  }, [count , updateCount]);
 
   
 
   return (
     <>
+      {updateCount && (
+        <AddStudent
+          updateCount={updateCount}
+          updateCountFunc={setUpdateCount}
+        />
+      )}
       <table className="table table-success table-striped">
         <thead>
           <tr>
@@ -43,7 +54,7 @@ function AllStudents() {
         <tbody>
           {students.map((student, index) => (
             <tr key={index}>
-              <td>{index+1+")"}</td>
+              <td>{index + 1 + ")"}</td>
               <td>{student.id}</td>
               <td>{student.studentName}</td>
               <td>{student.fatherName}</td>
@@ -51,8 +62,18 @@ function AllStudents() {
               <td>{student.studentEmail}</td>
               <td>{student.contactNo}</td>
               <td>
-                <button className="btn btn-success me-1" onClick={()=>setId(student.id)}>Edit</button>
-                <button className="btn btn-danger">Delete</button>
+                <button
+                  className="btn btn-success me-1"
+                  onClick={() => setId(student.id)}
+                >
+                  Edit
+                </button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => setDelId(student.id)}
+                >
+                  Delete
+                </button>{" "}
               </td>
             </tr>
           ))}
@@ -62,6 +83,9 @@ function AllStudents() {
       <h2>Update Student</h2>
 
       {id && <UpdateStudent studentId={id} />}
+      {delId && (
+        <DeleteStudent deleteId={delId} count={count} countFunc={setCount} />
+      )}
     </>
   );
 }
