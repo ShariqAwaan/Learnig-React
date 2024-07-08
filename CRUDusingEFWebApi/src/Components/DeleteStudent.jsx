@@ -9,7 +9,7 @@ function DeleteStudent({deleteId,count,countFunc}) {
         
         try {
             await axios
-                .delete(`https://localhost:7143/api/delete-student?Id=${stdId}`
+                .delete(`http://localhost:8080/api/delete-student?Id=${stdId}`
                 )
                 .then((res) => {
                     countFunc(count + 1)

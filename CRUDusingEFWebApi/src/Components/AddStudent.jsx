@@ -3,8 +3,9 @@ import Form from "react-bootstrap/Form";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import AllStudents from "./AllStudents";
 
-function AddStudent() {
+function AddStudent({updateCount , updateCountFunc}) {
   const [student, setStudent] = useState({
     StudentName: "",
     FatherName: "",
@@ -17,7 +18,7 @@ function AddStudent() {
     e.preventDefault();
     try {
       await axios
-        .post("https://localhost:7143/api/add-student", {
+        .post("http://localhost:8080/api/add-student", {
           studentName: student.StudentName,
           fatherName: student.FatherName,
           grade: student.Grade,
@@ -33,7 +34,9 @@ function AddStudent() {
             ContactNo: 0,
           });
           console.log(response);
+          updateCountFunc(updateCount + 1);
         });
+
     } catch (error) {
       console.log(error);
     }

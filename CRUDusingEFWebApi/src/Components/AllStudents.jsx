@@ -14,7 +14,7 @@ function AllStudents() {
   useEffect(() => {
     async function getAllStudents() {
       try {
-        await axios.get("https://localhost:7143/api/get-student")
+        await axios.get("http://localhost:8080/api/get-student")
       .then((response)=>{
         const convertedResponse = response.data;
         setStudents([
@@ -82,7 +82,7 @@ function AllStudents() {
 
       <h2>Update Student</h2>
 
-      {id && <UpdateStudent studentId={id} />}
+      {id && <UpdateStudent studentId={id} update={updateCount} updateFunc={setUpdateCount}/>}
       {delId && (
         <DeleteStudent deleteId={delId} count={count} countFunc={setCount} />
       )}

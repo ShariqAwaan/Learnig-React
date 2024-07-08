@@ -4,26 +4,26 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 
-function UpdateStudent({studentId}) {
+function UpdateStudent({studentId , update , updateFunc}) {
   let id = studentId;
   const [student, setStudent] = useState({
     StudentName: "",
     FatherName: "",
     Grade: "",
-    Email: "",
+    StudentEmail: "",
     ContactNo: 0,
   });
 
   useEffect(() => {
     async function getStudent() {
       try {
-        await axios.get(`https://localhost:7143/api/find-and-update-student?Id=${id}`)
+        await axios.get(`http://localhost:8080/api/find-student?Id=${id}`)
       .then((response)=>{
         setStudent({
           StudentName : response.data.studentName,
           FatherName : response.data.fatherName,
           Grade : response.data.grade,
-          Email : response.data.studentEmail,
+          StudentEmail : response.data.studentEmail,
           ContactNo : response.data.contactNo,
           
       })
@@ -42,9 +42,9 @@ function UpdateStudent({studentId}) {
     
     try {
       await axios
-        .post(`https://localhost:7143/api/find-and-update-student?Id=${id}`, student)
+        .put(`http://localhost:8080/api/find-and-update-student/${id}`, student)
         .then((response) => {
-        
+          updateFunc(update + 1);
           console.log(response);
         });
     } catch (error) {
@@ -89,7 +89,7 @@ function UpdateStudent({studentId}) {
             Email <br />
             (Optional)
           </Form.Label>
-          <Form.Control type="text" name="Email" value={student.Email} onChange={handleInputs} />
+          <Form.Control type="text" name="StudentEmail" value={student.StudentEmail} onChange={handleInputs} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formContactNo">
